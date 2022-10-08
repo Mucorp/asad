@@ -3012,3 +3012,9 @@ input[type="checkbox"] {
     display: none;
   }
 }
+
+.next-bg {
+  padding: 5px 15px;
+  margin-top: 50px;
+  background-color: #f4f5f7;
+}
