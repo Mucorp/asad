@@ -35,8 +35,8 @@
 
   // Menu Navigation
   var OnePageNav = function () {
-    var navToggler = $(".nilsbrown-js-nav-toggle");
-    $(".smoothscroll[href^='#'], #nilsbrown-navbar ul li a[href^='#']").on(
+    var navToggler = $(".l-tech-js-nav-toggle");
+    $(".smoothscroll[href^='#'], #l-tech-navbar ul li a[href^='#']").on(
       "click",
       function (e) {
         e.preventDefault();
@@ -53,7 +53,7 @@
         );
       }
     );
-    $("#nilsbrown-navbar ul li a[href^='#']").on("click", function (e) {
+    $("#l-tech-navbar ul li a[href^='#']").on("click", function (e) {
       if (navToggler.is(":visible")) {
         navToggler.click();
       }
@@ -63,8 +63,8 @@
   $(window).scroll(function () {
     var $this = $(this),
       st = $this.scrollTop(),
-      navbar = $(".nilsbrown-header"),
-      logo = $(".nilsbrown-header .logo> img");
+      navbar = $(".l-tech-header"),
+      logo = $(".l-tech-header .logo> img");
     if (st > 150) {
       if (!navbar.hasClass("scrolled")) {
         navbar.addClass("scrolled");
@@ -89,27 +89,27 @@
       }
     }
   });
-  $(".nilsbrown-js-nav-toggle").on("click", function (e) {
+  $(".l-tech-js-nav-toggle").on("click", function (e) {
     var $this = $(this);
     e.preventDefault();
     if ($("body").hasClass("menu-open")) {
       $this.removeClass("active");
-      $(".nilsbrown-menu .nilsbrown-menu-inner > ul > li").each(function (i) {
+      $(".l-tech-menu .l-tech-menu-inner > ul > li").each(function (i) {
         var that = $(this);
         setTimeout(function () {
           that.removeClass("is-show");
         }, i * 100);
       });
       setTimeout(function () {
-        $(".nilsbrown-menu").removeClass("nilsbrown-menu-show");
+        $(".l-tech-menu").removeClass("l-tech-menu-show");
       }, 800);
       $("body").removeClass("menu-open");
     } else {
-      $(".nilsbrown-menu").addClass("nilsbrown-menu-show");
+      $(".l-tech-menu").addClass("l-tech-menu-show");
       $this.addClass("active");
       $("body").addClass("menu-open");
       setTimeout(function () {
-        $(".nilsbrown-menu .nilsbrown-menu-inner > ul > li").each(function (i) {
+        $(".l-tech-menu .l-tech-menu-inner > ul > li").each(function (i) {
           var that = $(this);
           setTimeout(function () {
             that.addClass("is-show");
@@ -118,7 +118,7 @@
       }, 500);
     }
   });
-  $(".nilsbrown-menu .dropdown").hover(
+  $(".l-tech-menu .dropdown").hover(
     function () {
       var $this = $(this);
       $this.addClass("show");
@@ -193,7 +193,8 @@
     loop: true,
     margin: 10,
     mouseDrag: true,
-    autoplay: true,
+    autoplay: 1500,
+    autoplayTimeout: 1500,
     dots: false,
     autoplayHoverPause: true,
     nav: false,
@@ -273,7 +274,9 @@
     loop: true,
     margin: 10,
     mouseDrag: true,
-    autoplay: true,
+    autoplay: 250,
+    slideSpeed: 30,
+    autoplayTimeout: 1000,
     dots: false,
     nav: false,
     navText: [
